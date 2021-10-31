@@ -188,6 +188,8 @@ Map<FixtureEnum, List<Fixture>> fixtures = {
         payload: "055ece0cadddc415b1980f001785947120acdb36fc")
   ],
   FixtureEnum.invalid: [
+    Fixture(string: "", exception: "Invalid checksum"),
+    Fixture(string: "x", exception: "Invalid checksum"),
     Fixture(
         string: "Z9inZq4e2HGQRZQezDjFMmqgUE8NwMRok",
         exception: "Invalid checksum"),

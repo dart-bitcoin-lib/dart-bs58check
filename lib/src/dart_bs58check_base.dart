@@ -27,6 +27,9 @@ String encode(Uint8List payload) {
 
 /// Decode Raw Data
 Uint8List decodeRaw(Uint8List buffer) {
+  if (buffer.length < 5) {
+    throw ArgumentError('Invalid checksum');
+  }
   Uint8List payload = buffer.sublist(0, buffer.length - 4);
   Uint8List checksum = buffer.sublist(buffer.length - 4);
   Uint8List newChecksum = _hash256(payload);
@@ -41,6 +44,7 @@ Uint8List decodeRaw(Uint8List buffer) {
 
 /// Decode Data
 Uint8List decode(String data) {
+  if (data.trim() == '') throw ArgumentError('Invalid checksum');
   final buf = _base58.decode(data);
   return decodeRaw(buf);
 }

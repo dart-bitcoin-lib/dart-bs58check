@@ -17,7 +17,7 @@ void main() {
       });
     }
     for (Fixture fixture in fixtures[FixtureEnum.invalid]!) {
-      test("decode throws on ${fixture.string}", () {
+      test('decode throws on "${fixture.string}"', () {
         Uint8List? buffer;
         try {
           buffer = bs58check.decode(fixture.string);
