@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:dart_bs58check/dart_bs58check.dart' as bs58check;
+import 'package:dart_bs58check/dart_bs58check.dart';
 
 /// encode and decode test
 void main() {
