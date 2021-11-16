@@ -26,7 +26,7 @@ void main() {
           try {
             buffer = bs58check.decode(fixture.string);
           } catch (err) {
-            expect((err as ArgumentError).message, fixture.exception);
+            expect(err.toString(), matches(RegExp(fixture.exception!)));
           } finally {
             expect(buffer, null);
           }
