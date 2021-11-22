@@ -1,3 +1,7 @@
+## 3.0.1
+
+- add dart_bs58 package
+
 ## 3.0.0
 
 - update base_X, blake_hash
