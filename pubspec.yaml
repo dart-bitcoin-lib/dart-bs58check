@@ -11,7 +11,7 @@ environment:
 dependencies:
   pointycastle: ^3.3.4
   convert: ^3.0.1
-  dart_bs58: ^1.0.0
+  dart_bs58: ^1.0.1
 
 dev_dependencies:
   blake_hash: ^1.0.1
