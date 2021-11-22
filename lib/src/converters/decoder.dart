@@ -1,12 +1,8 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:base_x/base_x.dart';
+import 'package:dart_bs58/dart_bs58.dart';
 import 'package:dart_bs58check/src/utils/crypto.dart';
-
-/// base converter
-final BaseXCodec _base58 =
-    BaseXCodec('123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz');
 
 /// The canonical instance of [Base58CheckDecoder].
 const bs58CheckDecoder = Base58CheckDecoder();
@@ -44,7 +40,7 @@ class Base58CheckDecoder extends Converter<String, Uint8List> {
   Uint8List convert(String input) {
     if (input.trim() == '') throw ArgumentError('Invalid checksum');
     try {
-      final buf = _base58.decode(input);
+      final buf = bs58.decode(input);
       return decodeRaw(buf);
     } catch (e) {
       if (RegExp(r'The character \"[^\"]*\" at index [0-9]+ is invalid\.')
